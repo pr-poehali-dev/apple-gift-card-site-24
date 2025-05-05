@@ -16,54 +16,54 @@ const Products = () => {
       id: 1,
       amount: 1000,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-      description: "Идеально для приобретения приложений и подписок."
+      description: "Идеально для покупки приложений, игр или подписки на Apple Music на 1-2 месяца."
     },
     {
       id: 2,
       amount: 2500,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-      description: "Достаточно для подписки на несколько месяцев Apple Music или Apple TV+."
+      description: "Оптимально для нескольких месяцев Apple Music, Apple TV+ или приобретения игр."
     },
     {
       id: 3,
       amount: 5000,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-      description: "Премиальная карта для серьезных покупок в App Store или iTunes."
+      description: "Премиальный вариант для крупных покупок в App Store или годовых подписок."
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="px-6 py-4 border-b border-gray-100">
+      <nav className="px-6 py-6">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-2xl font-semibold">Apple Gift</Link>
-          <div className="flex space-x-6">
-            <Link to="/products" className="text-black border-b-2 border-black pb-0.5">Карты</Link>
-            <Link to="/instructions" className="text-gray-700 hover:text-black transition-colors">Как использовать</Link>
+          <Link to="/" className="text-2xl font-medium">Apple Gift</Link>
+          <div className="flex space-x-8">
+            <Link to="/products" className="text-black border-b border-black pb-1">Карты</Link>
+            <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
           </div>
         </div>
       </nav>
 
       {/* Products Header */}
-      <section className="py-12 px-6">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold tracking-tight mb-4">
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-5xl font-semibold mb-8">
             Apple Gift Cards
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            Выберите подходящий номинал и получите код активации мгновенно
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Выберите подходящий номинал и получите код активации на вашу почту
           </p>
         </div>
       </section>
 
       {/* Products Grid */}
       <section className="py-8 px-6">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-10">
             {giftCards.map((card) => (
-              <Card key={card.id} className="overflow-hidden border-0 shadow-lg rounded-xl flex flex-col">
-                <div className="aspect-[4/3] overflow-hidden bg-gray-50 flex items-center justify-center p-8">
+              <Card key={card.id} className="border-0 shadow-lg rounded-2xl flex flex-col">
+                <div className="aspect-square bg-gray-50 flex items-center justify-center p-10 rounded-t-2xl">
                   <img 
                     src={card.imageSrc} 
                     alt={`Apple Gift Card ${card.amount} руб.`}
@@ -71,13 +71,13 @@ const Products = () => {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">{card.amount} ₽</CardTitle>
+                  <CardTitle className="text-3xl font-medium text-center">{card.amount} ₽</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-gray-600">{card.description}</p>
+                  <p className="text-gray-600 text-center leading-relaxed">{card.description}</p>
                 </CardContent>
-                <CardFooter className="mt-auto">
-                  <Button className="w-full rounded-full">Купить</Button>
+                <CardFooter className="mt-auto pb-6">
+                  <Button className="w-full rounded-full bg-black hover:bg-gray-800 h-12">Купить</Button>
                 </CardFooter>
               </Card>
             ))}
@@ -86,33 +86,55 @@ const Products = () => {
       </section>
 
       {/* Information Section */}
-      <section className="py-16 px-6 bg-gray-50 mt-12">
-        <div className="container mx-auto">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-6 text-center">Информация о картах</h2>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-medium mb-2">Способы оплаты</h3>
-                <p className="text-gray-600">Принимаем банковские карты всех основных платежных систем, электронные кошельки и Apple Pay.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-medium mb-2">Активация</h3>
-                <p className="text-gray-600">После оплаты вы мгновенно получите код активации на указанную электронную почту.</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm">
-                <h3 className="text-xl font-medium mb-2">Поддержка</h3>
-                <p className="text-gray-600">Если у вас возникли вопросы, обратитесь в нашу службу поддержки по электронной почте support@applegift.com</p>
-              </div>
+      <section className="py-20 px-6 bg-gray-50 mt-16">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold mb-12 text-center">Информация о картах</h2>
+          <div className="grid md:grid-cols-2 gap-10">
+            <div>
+              <h3 className="text-xl font-medium mb-4">Активация</h3>
+              <p className="text-gray-600 leading-relaxed">
+                После оплаты вы мгновенно получите код активации на указанную электронную почту. 
+                Код можно ввести в App Store, iTunes Store или на apple.com/redeem.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Оплата и безопасность</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Мы принимаем все основные платежные карты, Apple Pay и электронные кошельки. 
+                Ваши платежные данные надежно защищены.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Срок действия</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Подарочные карты Apple не имеют срока действия и могут быть использованы в любое время 
+                после активации.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Поддержка</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Если у вас возникли вопросы или проблемы, обратитесь в нашу службу поддержки 
+                по электронной почте support@applegift.com
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-100">
-        <div className="container mx-auto text-center text-gray-600">
-          <p className="mb-2">© {new Date().getFullYear()} Apple Gift Cards.</p>
-          <p className="text-sm">Apple и логотип Apple являются товарными знаками Apple Inc.</p>
+      <footer className="py-12 px-6 bg-white">
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} Apple Gift Cards</p>
+            <div className="flex space-x-8">
+              <Link to="/products" className="text-gray-500 hover:text-black transition-colors">Карты</Link>
+              <Link to="/instructions" className="text-gray-500 hover:text-black transition-colors">Инструкция</Link>
+            </div>
+          </div>
+          <p className="text-sm text-gray-400 text-center md:text-left mt-6">
+            Apple и логотип Apple являются товарными знаками Apple Inc.
+          </p>
         </div>
       </footer>
     </div>

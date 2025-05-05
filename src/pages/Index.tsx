@@ -7,91 +7,124 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="px-6 py-4 border-b border-gray-100">
+      <nav className="px-6 py-6">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-2xl font-semibold">Apple Gift</Link>
-          <div className="flex space-x-6">
-            <Link to="/products" className="text-gray-700 hover:text-black transition-colors">Карты</Link>
-            <Link to="/instructions" className="text-gray-700 hover:text-black transition-colors">Как использовать</Link>
+          <Link to="/" className="text-2xl font-medium">Apple Gift</Link>
+          <div className="flex space-x-8">
+            <Link to="/products" className="text-gray-800 hover:text-black transition-colors">Карты</Link>
+            <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h1 className="text-5xl md:text-6xl font-semibold tracking-tight mb-8 text-center">
             Apple Gift Cards
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            Идеальный подарок для любителей Apple. Пополняйте Apple ID и
-            покупайте любимые приложения, игры, музыку и многое другое.
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 text-center leading-relaxed">
+            Универсальный способ порадовать себя и близких приложениями, играми, музыкой 
+            и другими сервисами Apple.
           </p>
-          <Link to="/products">
-            <Button size="lg" className="rounded-full px-8 py-6 text-base">
-              Выбрать карту <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+          <div className="flex justify-center">
+            <Link to="/products">
+              <Button size="lg" className="rounded-full px-8 text-base h-14 bg-black hover:bg-gray-800">
+                Выбрать карту <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Features */}
-      <section className="py-16 px-6 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold text-center mb-12">Почему Apple Gift Cards?</h2>
-          <div className="grid md:grid-cols-3 gap-10">
-            <div className="text-center">
-              <div className="bg-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                  <path fill="black" d="M7 13.5l2.5 2.5 7.5-7.5" stroke="white" strokeWidth="2" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2">Универсальность</h3>
-              <p className="text-gray-600">Используйте для любых покупок в экосистеме Apple</p>
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-16">
+            <div>
+              <h3 className="text-xl font-medium mb-4">Универсальность</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Одна карта для всех сервисов Apple — от App Store и iTunes до Apple Music, 
+                Apple TV+ и iCloud.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="bg-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2">Моментальная активация</h3>
-              <p className="text-gray-600">Мгновенная доставка кода на вашу электронную почту</p>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Моментальная доставка</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Получите код активации на вашу электронную почту сразу после оплаты.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="bg-black rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2">Идеальный подарок</h3>
-              <p className="text-gray-600">Позвольте близким выбрать то, что они действительно хотят</p>
+            <div>
+              <h3 className="text-xl font-medium mb-4">Идеальный подарок</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Подарите близким возможность выбрать именно то, что им нужно.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-6 text-center">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Готовы приобрести карту?</h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Выберите номинал и получите код активации мгновенно на вашу почту.
-          </p>
-          <Link to="/products">
-            <Button size="lg" className="rounded-full px-8 py-6 text-base">
-              Выбрать карту
-            </Button>
-          </Link>
+      {/* Card Showcase */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto text-center max-w-5xl">
+          <h2 className="text-4xl font-semibold mb-16">Выберите номинал</h2>
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+                  alt="Apple Logo" 
+                  className="w-20 h-20"
+                />
+              </div>
+              <h3 className="text-2xl font-medium mb-2">1 000 ₽</h3>
+              <Link to="/products">
+                <Button variant="outline" className="mt-4 rounded-full px-6">Выбрать</Button>
+              </Link>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+                  alt="Apple Logo" 
+                  className="w-20 h-20"
+                />
+              </div>
+              <h3 className="text-2xl font-medium mb-2">2 500 ₽</h3>
+              <Link to="/products">
+                <Button variant="outline" className="mt-4 rounded-full px-6">Выбрать</Button>
+              </Link>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 bg-gray-50 rounded-2xl flex items-center justify-center mb-6">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" 
+                  alt="Apple Logo" 
+                  className="w-20 h-20"
+                />
+              </div>
+              <h3 className="text-2xl font-medium mb-2">5 000 ₽</h3>
+              <Link to="/products">
+                <Button variant="outline" className="mt-4 rounded-full px-6">Выбрать</Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-gray-100">
-        <div className="container mx-auto text-center text-gray-600">
-          <p className="mb-2">© {new Date().getFullYear()} Apple Gift Cards.</p>
-          <p className="text-sm">Apple и логотип Apple являются товарными знаками Apple Inc.</p>
+      <footer className="py-12 px-6 bg-gray-50">
+        <div className="container mx-auto max-w-5xl">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} Apple Gift Cards</p>
+            <div className="flex space-x-8">
+              <Link to="/products" className="text-gray-500 hover:text-black transition-colors">Карты</Link>
+              <Link to="/instructions" className="text-gray-500 hover:text-black transition-colors">Инструкция</Link>
+            </div>
+          </div>
+          <p className="text-sm text-gray-400 text-center md:text-left mt-6">
+            Apple и логотип Apple являются товарными знаками Apple Inc.
+          </p>
         </div>
       </footer>
     </div>
