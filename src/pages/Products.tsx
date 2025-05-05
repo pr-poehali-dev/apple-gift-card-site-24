@@ -16,19 +16,19 @@ const Products = () => {
     {
       id: 1,
       amount: 1000,
-      imageSrc: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/giftcard-app-50-202006?wid=600&hei=450&fmt=jpeg&qlt=95&.v=1594920744000",
       description: "Идеально для приобретения приложений и подписок."
     },
     {
       id: 2,
       amount: 2500,
-      imageSrc: "https://images.unsplash.com/photo-1585184394271-4c0a47dc59c9?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/apple-gift-card-2020-landing-engraved?wid=600&hei=450&fmt=png-alpha&.v=1613502323000",
       description: "Достаточно для подписки на несколько месяцев Apple Music или Apple TV+."
     },
     {
       id: 3,
       amount: 5000,
-      imageSrc: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/giftcard-celebrate-202006?wid=600&hei=450&fmt=jpeg&qlt=95&.v=1594920744000",
       description: "Премиальная карта для серьезных покупок в App Store или iTunes."
     }
   ];
