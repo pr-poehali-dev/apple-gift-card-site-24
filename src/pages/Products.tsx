@@ -2,35 +2,65 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCart } from "@/context/CartContext";
+import { ShoppingBag, Check } from "lucide-react";
+import Cart from "@/components/Cart";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 interface GiftCard {
   id: number;
   amount: number;
+  price: number;
   imageSrc: string;
   description: string;
 }
 
 const Products = () => {
+  const { addToCart, items } = useCart();
+  const { toast } = useToast();
+  
   const giftCards: GiftCard[] = [
     {
       id: 1,
       amount: 1000,
+      price: 1000,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
       description: "Идеально для покупки приложений, игр или подписки на Apple Music на 1-2 месяца."
     },
     {
       id: 2,
       amount: 2500,
+      price: 2500,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
       description: "Оптимально для нескольких месяцев Apple Music, Apple TV+ или приобретения игр."
     },
     {
       id: 3,
       amount: 5000,
+      price: 5000,
       imageSrc: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
       description: "Премиальный вариант для крупных покупок в App Store или годовых подписок."
     }
   ];
+
+  const handleAddToCart = (card: GiftCard) => {
+    addToCart({
+      id: card.id,
+      amount: card.amount,
+      price: card.price,
+      name: `Apple Gift Card ${card.amount} ₽`
+    });
+    
+    toast({
+      title: "Товар добавлен в корзину",
+      description: `Apple Gift Card ${card.amount} ₽ добавлена в корзину`,
+    });
+  };
+
+  const isInCart = (id: number) => {
+    return items.some(item => item.id === id);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -38,9 +68,12 @@ const Products = () => {
       <nav className="px-6 py-6">
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="text-2xl font-medium">Apple Gift</Link>
-          <div className="flex space-x-8">
-            <Link to="/products" className="text-black border-b border-black pb-1">Карты</Link>
-            <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
+          <div className="flex items-center space-x-8">
+            <div className="flex space-x-8 mr-4">
+              <Link to="/products" className="text-black border-b border-black pb-1">Карты</Link>
+              <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
+            </div>
+            <Cart />
           </div>
         </div>
       </nav>
@@ -77,7 +110,18 @@ const Products = () => {
                   <p className="text-gray-600 text-center leading-relaxed">{card.description}</p>
                 </CardContent>
                 <CardFooter className="mt-auto pb-6">
-                  <Button className="w-full rounded-full bg-black hover:bg-gray-800 h-12">Купить</Button>
+                  {isInCart(card.id) ? (
+                    <Button className="w-full rounded-full bg-green-600 hover:bg-green-700 h-12" disabled>
+                      <Check className="mr-2 h-4 w-4" /> В корзине
+                    </Button>
+                  ) : (
+                    <Button 
+                      className="w-full rounded-full bg-black hover:bg-gray-800 h-12"
+                      onClick={() => handleAddToCart(card)}
+                    >
+                      <ShoppingBag className="mr-2 h-4 w-4" /> Купить
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             ))}

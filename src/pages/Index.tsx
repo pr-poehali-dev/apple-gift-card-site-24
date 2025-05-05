@@ -1,7 +1,7 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Cart from "@/components/Cart";
 
 const Index = () => {
   return (
@@ -10,9 +10,12 @@ const Index = () => {
       <nav className="px-6 py-6">
         <div className="container mx-auto flex justify-between items-center">
           <Link to="/" className="text-2xl font-medium">Apple Gift</Link>
-          <div className="flex space-x-8">
-            <Link to="/products" className="text-gray-800 hover:text-black transition-colors">Карты</Link>
-            <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
+          <div className="flex items-center space-x-8">
+            <div className="flex space-x-8 mr-4">
+              <Link to="/products" className="text-gray-800 hover:text-black transition-colors">Карты</Link>
+              <Link to="/instructions" className="text-gray-800 hover:text-black transition-colors">Инструкция</Link>
+            </div>
+            <Cart />
           </div>
         </div>
       </nav>
@@ -116,7 +119,7 @@ const Index = () => {
       <footer className="py-12 px-6 bg-gray-50">
         <div className="container mx-auto max-w-5xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} Apple Gift Cards</p>
+            <p className="text-gray-500 mb-4 md:mb-0"> {new Date().getFullYear()} Apple Gift Cards</p>
             <div className="flex space-x-8">
               <Link to="/products" className="text-gray-500 hover:text-black transition-colors">Карты</Link>
               <Link to="/instructions" className="text-gray-500 hover:text-black transition-colors">Инструкция</Link>
