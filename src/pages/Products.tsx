@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,19 +16,19 @@ const Products = () => {
     {
       id: 1,
       amount: 1000,
-      imageSrc: "https://images.unsplash.com/photo-1607582544904-f2342af3dea4?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?q=80&w=600&auto=format&fit=crop",
       description: "Идеально для приобретения приложений и подписок."
     },
     {
       id: 2,
       amount: 2500,
-      imageSrc: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1585184394271-4c0a47dc59c9?q=80&w=600&auto=format&fit=crop",
       description: "Достаточно для подписки на несколько месяцев Apple Music или Apple TV+."
     },
     {
       id: 3,
       amount: 5000,
-      imageSrc: "https://images.unsplash.com/photo-1592424002053-21f369ad7fdb?q=80&w=600&auto=format&fit=crop",
+      imageSrc: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=600&auto=format&fit=crop",
       description: "Премиальная карта для серьезных покупок в App Store или iTunes."
     }
   ];
@@ -113,7 +112,7 @@ const Products = () => {
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-gray-100">
         <div className="container mx-auto text-center text-gray-600">
-          <p className="mb-2">© {new Date().getFullYear()} Apple Gift Cards.</p>
+          <p className="mb-2"> {new Date().getFullYear()} Apple Gift Cards.</p>
           <p className="text-sm">Apple и логотип Apple являются товарными знаками Apple Inc.</p>
         </div>
       </footer>
